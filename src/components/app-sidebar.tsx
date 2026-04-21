@@ -124,8 +124,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <span className="font-medium text-sm whitespace-nowrap overflow-hidden truncate flex-1">
                     {item.title}
                   </span>
-                  {/* Badge */}
-                  {"badge" in item && item.badge && (
+                  {(item as any).badge && (
                     <span
                       className={`
                         group-data-[collapsible=icon]:hidden
@@ -135,7 +134,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                         ${(item as any).badgeColor ?? "bg-blue-500"}
                       `}
                     >
-                      {item.badge}
+                      {(item as any).badge}
                     </span>
                   )}
                 </SidebarMenuButton>

@@ -33,9 +33,9 @@ export default function RootLayout({
       <body className="min-h-full">
         <SidebarProvider>
           <AppSidebar />
-          <SidebarInset>
+          <SidebarInset className="overflow-x-hidden min-w-0">
             <Navbar />
-            <main className="p-4 md:p-6 lg:p-8">
+            <main className="min-h-screen bg-[#f8f9fc]">
               {children}
             </main>
           </SidebarInset>

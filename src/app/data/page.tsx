@@ -180,10 +180,10 @@ export default function DataSection() {
   const [activeTab, setActiveTab] = useState<SyncTab>("sync");
 
   return (
-    <div className="min-h-screen bg-[#f8f9fc] font-sans">
+    <div className="w-full bg-[#f8f9fc]">
 
       {/* ── Top Nav ── */}
-      <div className="bg-white border-b border-gray-100 sticky top-0 z-40 shadow-sm">
+      <div className="bg-white border-b border-gray-100 shadow-sm">
         <div className="px-4 md:px-6 py-3 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
           <div>
             <h1 className="text-base font-bold text-gray-900">Data</h1>
@@ -501,7 +501,7 @@ export default function DataSection() {
                       {recordSyncData.map((_, i) => <Cell key={i} fill={recordSyncData[i].color} />)}
                     </Pie>
                     <Tooltip
-                      formatter={(v: number, n: string) => [v.toLocaleString(), n]}
+                      formatter={(v: any, n: any) => [v?.toLocaleString() ?? "0", n]}
                       contentStyle={{ borderRadius: 8, fontSize: 10 }}
                     />
                   </PieChart>
@@ -561,7 +561,7 @@ export default function DataSection() {
                 <XAxis dataKey="date" tick={{ fontSize: 8, fill: "#9ca3af" }} axisLine={false} tickLine={false} />
                 <YAxis domain={[80, 100]} tick={{ fontSize: 8, fill: "#9ca3af" }} axisLine={false} tickLine={false} unit="%" />
                 <Tooltip
-                  formatter={(v: number) => [`${v}%`, "Success Rate"]}
+                  formatter={(v: any) => [`${v}%`, "Success Rate"]}
                   contentStyle={{ borderRadius: 8, border: "1px solid #e5e7eb", fontSize: 11 }}
                 />
                 <Area

@@ -177,10 +177,10 @@ export default function MultiEntityView() {
   const [compareMode, setCompareMode] = useState<"consolidated" | "compare">("consolidated");
 
   return (
-    <div className="min-h-screen bg-[#f8f9fc] font-sans">
+    <div className="w-full bg-[#f8f9fc]">
 
       {/* ── Top Nav ── */}
-      <div className="bg-white border-b border-gray-100 sticky top-0 z-40 shadow-sm">
+      <div className="bg-white border-b border-gray-100 shadow-sm">
         <div className="px-4 md:px-6 py-3 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
           <div>
             <h1 className="text-base font-bold text-gray-900 leading-tight">Multi-Entity Overview</h1>
@@ -366,7 +366,7 @@ export default function MultiEntityView() {
                     <Pie data={revByEntityData} cx="50%" cy="50%" innerRadius={48} outerRadius={72} dataKey="value" paddingAngle={2} stroke="none">
                       {revByEntityData.map((_, i) => <Cell key={i} fill={entityColors[i]} />)}
                     </Pie>
-                    <Tooltip formatter={(v: number) => [`₹${v}L`, ""]} contentStyle={{ borderRadius: 8, fontSize: 11 }} />
+                    <Tooltip formatter={(v: any) => [`₹${v}L`, ""]} contentStyle={{ borderRadius: 8, fontSize: 11 }} />
                   </PieChart>
                 </ResponsiveContainer>
               </div>
@@ -390,7 +390,7 @@ export default function MultiEntityView() {
                 <CartesianGrid strokeDasharray="3 3" stroke="#f3f4f6" vertical={false} />
                 <XAxis dataKey="name" tick={{ fontSize: 8, fill: "#9ca3af" }} axisLine={false} tickLine={false} />
                 <YAxis tick={{ fontSize: 8, fill: "#9ca3af" }} axisLine={false} tickLine={false} unit="%" />
-                <Tooltip formatter={(v: number) => [`${v}%`, "Profit %"]} contentStyle={{ borderRadius: 8, fontSize: 11 }} />
+                <Tooltip formatter={(v: any) => [`${v}%`, "Profit %"]} contentStyle={{ borderRadius: 8, fontSize: 11 }} />
                 <Bar dataKey="value" name="Profit %" radius={[4,4,0,0]}>
                   {profitByEntityData.map((_, i) => <Cell key={i} fill={entityColors[i]} />)}
                 </Bar>
