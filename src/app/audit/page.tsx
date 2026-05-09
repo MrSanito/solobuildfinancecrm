@@ -19,6 +19,7 @@ export default function AuditLogs() {
 
       {/* ── Content ── */}
       <div className="p-4 md:p-6 flex gap-4 items-start">
+        <div></div>
         {/* ── Main (Left + Center) ── */}
         <div className="flex-1 min-w-0 space-y-4">
           <FiltersPanel searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
